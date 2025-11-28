@@ -1,0 +1,31 @@
+Event Tracker Documentation:
+
+HTML:
+
+The HTML code is well-optimised.
+Accessibility options such as "alt text" have been included to assist users.
+External resources have been correctly linked in their specified elements.
+Correct descriptive tags have been used such as "header."
+
+
+CSS:
+
+The CSS has been made using an external stylesheet to improve file organisation.
+The font sizes have been adjusted to ensure they are visible to most users.
+The website includes styling for interactive elements such as buttons to make them easier to recognise.
+
+
+JavaScript:
+
+Allows the user to add an event when required.
+The added event will be displayed on the web page.
+The event can be viewed along with the other events that have been previously added.
+The JavaScript is stored in a separate file to make the file organisation better.
+
+
+Non-Technical:
+
+The website layout is easy to understand.
+Most actions can be done within 3 clicks.
+The colours should not be difficult to see for people with colour blindness.
+The layout of the event calendar is not cluttered. 
