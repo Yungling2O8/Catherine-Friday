@@ -3,9 +3,70 @@ const titleInput = document.getElementById("title");
 const dateInput = document.getElementById("date");
 const eventsList = document.getElementById("eventsList");
 const emptyState = document.getElementById("emptyState");
+const addButton = form.querySelector('button[type="submit"]');
 
 const titleError = document.getElementById("titleError");
 const dateError = document.getElementById("dateError");
+
+let nekoActive = false;
+let currentNekoImage = null;
+
+
+async function getNekoImage() {
+  try {
+
+    const response = await fetch('https://api.waifu.pics/sfw/neko');
+    if (response.ok) {
+      const data = await response.json();
+      return data.url;
+    }
+  } catch (error) {
+    console.log('Primary API failed, trying fallback...');
+  }
+  
+  try {
+
+    const response = await fetch('https://nekos.life/api/v2/img/neko');
+    if (response.ok) {
+      const data = await response.json();
+      return data.url;
+    }
+  } catch (error) {
+    console.log('Fallback API failed');
+  }
+  
+  return null;
+}
+
+async function applyNekoBackground() {
+  if (!currentNekoImage) {
+    currentNekoImage = await getNekoImage();
+  }
+  
+  if (currentNekoImage) {
+    document.body.style.backgroundImage = `url("${currentNekoImage}")`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+  }
+}
+
+function clearNekoBackground() {
+  document.body.style.backgroundImage = "";
+  currentNekoImage = null;
+}
+
+
+addButton.addEventListener("dblclick", async function (e) {
+  e.preventDefault();
+
+  nekoActive = !nekoActive;
+  if (nekoActive) {
+    await applyNekoBackground();
+  } else {
+    clearNekoBackground();
+  }
+});
 
 function formatDateForDisplay(rawDate) {
   const date = new Date(rawDate);
