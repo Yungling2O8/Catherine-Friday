@@ -1,3 +1,4 @@
+//caspers work
 const form = document.getElementById("eventForm");
 const titleInput = document.getElementById("title");
 const dateInput = document.getElementById("date");
