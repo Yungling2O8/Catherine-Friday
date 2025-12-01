@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+  color: #111827;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem 2rem 2.25rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.header p {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto;
+  gap: 0.75rem;
+  align-items: end;
+  margin-bottom: 1.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+input[type="text"],
+input[type="date"] {
+  padding: 0.55rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+button {
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.08s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.3);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.3);
+  opacity: 0.9;
+}
+
+.events-section h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.events-section h2 span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #e5f0ff;
+  color: #1d4ed8;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+}
+
+#eventsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.event-item {
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.event-title {
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.event-date {
+  font-size: 0.85rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.empty-state {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  padding: 0.4rem 0;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.25rem 1.25rem 1.75rem;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .event-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+

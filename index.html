@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Event List</h1>
+      <p>Add upcoming events and see them appear below instantly.</p>
+    </header>
+
+    <form id="eventForm">
+      <div class="field">
+        <label for="title">Event Title</label>
+        <input type="text" id="title" placeholder="e.g. Team Meeting" required />
+        <div id="titleError" class="error" style="display:none;">Please enter an event title.</div>
+      </div>
+
+      <div class="field">
+        <label for="date">Event Date</label>
+        <input type="date" id="date" required />
+        <div id="dateError" class="error" style="display:none;">Please select a valid date.</div>
+      </div>
+
+      <button type="submit">Add Event</button>
+    </form>
+
+    <section class="events-section">
+      <h2>Events <span>Live</span></h2>
+      <div id="emptyState" class="empty-state">No events yet. Add your first one above.</div>
+      <ul id="eventsList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
